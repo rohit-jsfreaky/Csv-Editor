@@ -58,7 +58,7 @@ function UserFiles() {
 
   return (
     <div
-      className="w-full h-[91.8vh] p-20"
+      className="w-full h-[91.8vh] p-8 md:p-20"
       style={{ height: `calc(100vh - 64px)` }}
     >
       <h1 className="text-4xl font-bold mb-8">Uploaded Files</h1>

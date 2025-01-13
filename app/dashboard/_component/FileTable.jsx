@@ -49,8 +49,8 @@ const FileTable = ({
                 {new Date(file?.lastModified).toLocaleString()}
               </TableCell>
               <TableCell>{(file?.size / 1024).toFixed(2)}</TableCell>
-              <TableCell className="text-right">
-                <div className="flex flex-wrap justify-end gap-2">
+              <TableCell className="text-right flex gap-2">
+              
                   <Button
                     className="px-4 md:px-7 rounded-xl hover:border text-sm md:text-base"
                     onClick={() =>
@@ -128,7 +128,7 @@ const FileTable = ({
                       "Delete"
                     )}
                   </Button>
-                </div>
+               
               </TableCell>
             </TableRow>
           ))}
