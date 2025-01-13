@@ -62,7 +62,9 @@ const Edit = ({ fileContent, fileName }) => {
       {fileContent.length > 0 ? (
         <>
           <div className="flex justify-end items-center mb-4">
-            <Button onClick={() => setEdit(!edit)} className="ml-4">
+            <Button onClick={() => setEdit(!edit)} className="ml-4"
+              disabled={isSaving}
+              >
               {edit ? "Disable Edit Mode" : "Enable Edit Mode"}
             </Button>
 
@@ -70,7 +72,8 @@ const Edit = ({ fileContent, fileName }) => {
               onClick={() => {
                 handleSave(setIsSaving, originalData, fileName, setEdit, toast);
               }}
-              className="ml-4 bg-green-400 hover:bg-green-800 rounded-xl text-white"
+              className={`ml-4 bg-green-400 hover:bg-green-800 rounded-xl text-white ${isSaving && "cursor-not-allowed"}`}
+              disabled={isSaving}
             >
               {isSaving ? (
                 <div className="flex justify-center items-center">

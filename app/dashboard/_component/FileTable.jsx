@@ -26,6 +26,7 @@ const FileTable = ({
   const toast = useToast();
   const router = useRouter();
 
+
   return (
     <div className="overflow-x-auto w-full">
       <Table className="min-w-[600px] w-full">
@@ -55,6 +56,11 @@ const FileTable = ({
                     onClick={() =>
                       router.push(`/dashboard/edit/${file?.key.split("/")[1]}`)
                     }
+                    disabled={
+                      deleteState.isLoading ||
+                      downloadState.isLoading
+                    }
+                   
                   >
                     Edit
                   </Button>
@@ -69,6 +75,7 @@ const FileTable = ({
                       )
                     }
                     disabled={
+                      deleteState.isLoading ||
                       downloadState.isLoading &&
                       downloadState.fileName === file.key.split("/").pop()
                     }
@@ -101,6 +108,7 @@ const FileTable = ({
                       )
                     }
                     disabled={
+                      downloadState.isLoading || 
                       deleteState.isLoading &&
                       deleteState.fileName === file.key.split("/").pop()
                     }
