@@ -80,7 +80,7 @@ export function FancyDropzone({ onFileAdded, onUpload }) {
         <input
           {...getInputProps()}
           accept=".csv"
-          disabled={!isUploading}
+          disabled={isUploading}
           className={`${
             isUploading ? "cursor-not-allowed opacity-50" : "cursor-pointer"
           }`}
